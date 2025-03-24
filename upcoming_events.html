@@ -95,7 +95,7 @@
             color: #666;
             line-height: 1.7;
             font-size: 1rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
         .event-meta {
             display: flex;
@@ -110,6 +110,32 @@
         .event-meta i {
             color: #e74c3c;
             margin-right: 5px;
+        }
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .countdown-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #e74c3c;
+            margin-bottom: 0.2rem;
+        }
+        .countdown-label {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            text-transform: uppercase;
         }
         @media (max-width: 768px) {
             .events-grid {
@@ -132,6 +158,24 @@
                     <div class="event-date">April 15, 2025</div>
                     <h2 class="event-title">DIPEX Innovation Summit 2025</h2>
                     <p class="event-description">Join us for our annual innovation summit featuring student projects, industry experts, and networking opportunities. This year's focus will be on sustainable technology and AI innovations.</p>
+                    <div class="countdown" data-date="2025-04-15T09:00:00+05:30">
+                        <div class="countdown-item">
+                            <span class="countdown-value days">--</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value hours">--</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value minutes">--</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value seconds">--</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
                     <div class="event-meta">
                         <span><i class="fas fa-map-marker-alt"></i> Main Auditorium</span>
                         <span><i class="fas fa-clock"></i> 9:00 AM - 5:00 PM</span>
@@ -145,6 +189,24 @@
                     <div class="event-date">May 1, 2025</div>
                     <h2 class="event-title">Entrepreneurship Workshop Series</h2>
                     <p class="event-description">A three-day workshop series covering business plan development, funding strategies, and market analysis. Perfect for students and young entrepreneurs.</p>
+                    <div class="countdown" data-date="2025-05-01T14:00:00+05:30">
+                        <div class="countdown-item">
+                            <span class="countdown-value days">--</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value hours">--</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value minutes">--</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value seconds">--</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
                     <div class="event-meta">
                         <span><i class="fas fa-map-marker-alt"></i> Conference Room B</span>
                         <span><i class="fas fa-clock"></i> 2:00 PM - 6:00 PM</span>
@@ -158,6 +220,24 @@
                     <div class="event-date">May 20, 2025</div>
                     <h2 class="event-title">Tech Talks: Future of Innovation</h2>
                     <p class="event-description">An evening of inspiring talks from industry leaders discussing the future of technology and innovation in India.</p>
+                    <div class="countdown" data-date="2025-05-20T16:00:00+05:30">
+                        <div class="countdown-item">
+                            <span class="countdown-value days">--</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value hours">--</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value minutes">--</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value seconds">--</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
                     <div class="event-meta">
                         <span><i class="fas fa-map-marker-alt"></i> Seminar Hall</span>
                         <span><i class="fas fa-clock"></i> 4:00 PM - 7:00 PM</span>
@@ -166,5 +246,37 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function updateCountdown() {
+            const countdowns = document.querySelectorAll('.countdown');
+            
+            countdowns.forEach(countdown => {
+                const targetDate = new Date(countdown.dataset.date);
+                const now = new Date();
+                const difference = targetDate - now;
+
+                if (difference <= 0) {
+                    countdown.innerHTML = '<div class="countdown-item"><span class="countdown-value">Event Started</span></div>';
+                    return;
+                }
+
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                countdown.querySelector('.days').textContent = days;
+                countdown.querySelector('.hours').textContent = hours;
+                countdown.querySelector('.minutes').textContent = minutes;
+                countdown.querySelector('.seconds').textContent = seconds;
+            });
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        // Initial update
+        updateCountdown();
+    </script>
 </body>
 </html>
