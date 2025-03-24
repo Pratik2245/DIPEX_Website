@@ -4,12 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upcoming Events - SRIJAN</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background: #f8f9fa;
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
         .events-container {
             max-width: 1200px;
-            margin: 2rem auto;
+            margin: 0 auto;
             padding: 0 20px;
         }
         .events-grid {
@@ -101,60 +111,20 @@
             color: #e74c3c;
             margin-right: 5px;
         }
-        .page-title {
-            text-align: center;
-            color: #2c3e50;
-            margin: 3rem 0;
-            font-size: 2.8rem;
-            font-weight: 700;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-        .page-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: #e74c3c;
-            border-radius: 2px;
-        }
         @media (max-width: 768px) {
             .events-grid {
                 grid-template-columns: 1fr;
                 padding: 0.5rem;
             }
-            .page-title {
-                font-size: 2rem;
-                margin: 2rem 0;
+            body {
+                padding: 1rem 0;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="index.html">DIPEX</a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="dipex.html">DIPEX</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="media.html">Media</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Events Section -->
-    <section class="events-container">
+    <div class="events-container">
         <h1 class="page-title">Upcoming Events</h1>
-        
         <div class="events-grid">
             <div class="event-card">
                 <div class="event-image" style="background-image: url('images/innovation-summit.jpg')"></div>
@@ -195,13 +165,6 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2025 SRIJAN TRUST. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+    </div>
 </body>
 </html>
