@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIPEX 2025 Winners</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298, #ff6600, #1e3c72); /* Dynamic gradient background */
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            color: #ffffff;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Container to center content */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* Soft shadow around the container */
+            text-align: center;
+            overflow: hidden; /* Ensure the container hides overflow */
+        }
+
+        /* Logo styling */
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 150px; /* Adjust the size of the logo */
+            height: auto;
+        }
+
+        /* Header styling */
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ff6600; /* Orange color */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Text shadow for depth */
+            margin-bottom: 1rem;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent table background */
+        }
+
+        thead {
+            background-color: rgba(255, 255, 255, 0.2); /* Lighter header row */
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid #ff6600; /* Orange borders */
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
+        }
+
+        tbody tr {
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        tbody tr:hover {
+            background-color: rgba(255, 255, 255, 0.3); /* Highlight row on hover */
+            transform: scale(1.1); /* Enlarge the row on hover */
+            z-index: 1; /* Bring the row to the foreground */
+        }
+
+        tbody tr:hover ~ tr {
+            opacity: 0.5; /* Fade other rows */
+            transform: scale(0.9); /* Shrink other rows */
+        }
+
+        tbody tr:nth-child(even) td {
+            background-color: rgba(255, 255, 255, 0.05); /* Slightly darker for even rows */
+        }
+
+        /* Position numbers styling */
+        .position {
+            position: relative;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .position span {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffd700; /* Yellow color */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: positionAnimation 2s ease-in-out infinite;
+        }
+
+        @keyframes positionAnimation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Animation for names */
+        tbody td:nth-child(2) {
+            position: relative;
+            overflow: hidden;
+        }
+
+        tbody td:nth-child(2)::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255, 102, 0, 0.5), rgba(255, 255, 255, 0.2));
+            transform: translateX(-100%);
+            animation: nameAnimation 2s ease-in-out infinite;
+        }
+
+        @keyframes nameAnimation {
+            0% {
+                transform: translateX(-100%);
+            }
+            50% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Footer / Congratulations text */
+        .footer {
+            margin-top: 2rem;
+            font-size: 1.5rem;
+            color: #ff6600; /* Orange */
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer span {
+            font-size: 2rem;
+            color: #ffd700; /* Yellow accent for extra emphasis */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Placeholder for the DIPEX logo -->
+        <div class="logo">
+            <img src="logo.png" alt="DIPEX Logo">
+        </div>
+        <h1>DIPEX 2025 Winners 🎉</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>Name</th>
+                    <th>Theme</th>
+                    <th>Group Name</th>
+                    <th>Project</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="position"><span>1st</span></td>
+                    <td>John Doe</td>
+                    <td>Innovation</td>
+                    <td>Team Alpha</td>
+                    <td>XYZ Project</td>
+                </tr>
+                <tr>
+                    <td class="position"><span>2nd</span></td>
+                    <td>Jane Smith</td>
+                    <td>Leadership</td>
+                    <td>Team Beta</td>
+                    <td>ABC Project</td>
+                </tr>
+                <tr>
+                    <td class="position"><span>3rd</span></td>
+                    <td>Michael Johnson</td>
+                    <td>Creativity</td>
+                    <td>Team Gamma</td>
+                    <td>LMN Project</td>
+                </tr>
+                <tr>
+                    <td class="position"><span>4th</span></td>
+                    <td>Emily White</td>
+                    <td>Technology</td>
+                    <td>Team Delta</td>
+                    <td>OPQ Project</td>
+                </tr>
+                <tr>
+                    <td class="position"><span>5th</span></td>
+                    <td>Chris Lee</td>
+                    <td>Environment</td>
+                    <td>Team Epsilon</td>
+                    <td>DEF Project</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="footer">
+            Congratulations to all the winners! <span>🎉</span>
+        </div>
+    </div>
+</body>
+</html>
